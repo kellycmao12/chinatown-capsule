@@ -1,0 +1,116 @@
+! version = 2.0
+
+// Substitutions
+! sub i'm     = i am
+! sub i'd     = i would
+! sub i've    = i have
+! sub i'll    = i will
+! sub don't   = do not
+! sub isn't   = is not
+! sub you'd   = you would
+! sub you're  = you are
+! sub you've  = you have
+! sub you'll  = you will
+! sub what's  = what is
+! sub whats   = what is
+! sub what're = what are
+! sub what've = what have
+! sub what'll = what will
+! sub who's   = who is
+
+// OPENING
++ hi truman
+- Hey, thanks for stopping by! What's your name? (my name is _){topic=jingfong}
+
++ hi nancy
+- Hi! I'm Nancy, what's your name? (my name is _){topic=attacks}
+
+>topic jingfong
+    // NAME
+    + my name is *
+    - <set username=<formal>>Nice to meet you, <get username>. Have you been to Jing Fong before? (yes / no)
+
+    + [*] no [*]
+    - Ah, we're happy to finally have you here then! Jing Fong is one of New York City’s most beloved dim sum restaurants. Our old banquet hall, where we operated for 28 years before closing, was unmatched. (ask about the old banquet hall / the dim sum)
+
+    + [*] yes [*]
+    - Ah, it's great to see you again! You probably visited our old location on Elizabeth Street, where we operated our huge banquet hall for 28 years. But after the pandemic hit, our business suffered and became unsustainable. (ask about the banquet hall / how covid affected them)
+
+    + [*] banquet hall [*]
+    - It was Chinatown's most iconic and largest dining room, spanning 25,000 square feet and serving up to 800 people at once before the pandemic hit. Families would come for dim sum every week or even celebrate weddings, graduations, birthdays, and retirements there. (ask about the dim sum / covid)
+
+    + [*] dim sum [*]
+    - Dim sum is a Chinese meal of small plates such as steamed and fried buns, dumplings and rolls, best enjoyed with tea in the company of family and friends. Our staff would push around carts boasting freshly made dim sum -- roast pork buns, shrimp har gow, egg tarts, you name it! That all changed when the pandemic hit though... (ask about covid)
+
+    + [*] covid [*]
+    - Even before any mandates to shut down indoor dining, our business suffered as a result of diminished tourism as well as racism and xenophobia surrounding the coronavirus. We faced a drastic 85 percent decline in sales, which amounted to losses of about $5-6 million. (ask about racism / what they did when sales declined)
+
+    + [*] racism [*]
+    - Covid-fueled racism has really hurt Chinatown, and its ~300 restaurants and cafes. Tens of thousands of office workers, tourists and visitors would flood into these businesses every day, but they stopped coming in early 2020 after reports about the virus outbreak in China, weeks before the first New York case on March 1. (ask about what Jing Fong did when sales declined)
+
+    + [*] (decline|declined|declining) [*]
+    - Sadly, we had to permanently close the banquet hall in March 2020. We continued operating the kitchen for takeout, delivery, and outdoor dining, but our sales were still a fraction of what they were pre-pandemic. ~180 employees were laid off as well, many of whom struggled to pay rent and find employment again. (ask about the employees / closing)
+
+    + [*] employees [*]
+    - Many employees have been here since the very beginning, so there’s a long history; it's like a second home. It's heartbreaking that they will no longer get to interact with the customers they've served for decades. We're also Chinatown's only unionized restaurant, so even if they find other jobs, they won't have the rights and protection they have now. (ask about an example / closing)
+
+    + [*] example [*]
+    - Li Zhen Tan, 59, was a server at Jing Fong for 24 years. Two weeks after she was laid off in March 2020, she told NY Daily News that she had been collecting unemployment, was struggling to pay rent for her 6-person household, and was unsure if anyone would hire her during the pandemic. (ask about closing)
+
+    + [*] (close|closed|closing) [*]
+    - I knew it would be a sentimental time for the Chinatown community, but I was still surprised by the outpouring of emotional customers. During the last few days we were open, they came in just to walk around and take pictures, and I didn’t realize how many people have been coming to us weekly for so long. (ask about customer stories / how you can help)
+
+    + [*] (customer|customers|stories|story) [*]
+    - One family said, “Oh, this is my son. He’s 13 years old now and I remember coming here before he was born, while I was pregnant, and, you know, after baseball practice, every Sunday, we’d bring him every weekend.” There were so many stories like that. (ask about how you can help)
+
+    + [*] help [*]
+    - There are so many ways to help your local Chinatown businesses: buy takeout, pay with cash, tip generously, shop for groceries and home goods, buy gift cards, and encourage others to support by writing reviews and recommending restaurants to friends. You can also donate to organizations like Send Chinatown Love, Heart of Dinner, and Welcome to Chinatown!{topic=random}
+
+    + *
+    - Try asking about that topic in a different way!
+<topic
+
+>topic attacks
+    // NAME
+    + my name is *
+    - <set username=<formal>>Nice to meet you, <get username>. Do you take the subway a lot? (yes / no)
+
+    + [*] no [*]
+    - Oh ok, I just want to warn you to be careful then. Try to stand as far from the platform edge as possible, or stand behind a post or bench if you can. Always be aware of your surroundings, and try to stand where other people are. (ask about more advice / why precautions are needed)
+
+    + [*] yes [*]
+    - Ok cool, just remember to be careful every time, alright? I always get nervous now when I'm waiting for the subway. I'm constantly looking around, thinking about the possibility of being attacked. It's impossible to relax when using public transit or even just walking outside. (ask about why precautions are needed)
+
+    + [*] advice [*]
+    - Stand against the wall to protect yourself from getting pushed. Look up from your phone and don't wear earbuds so you aren't distracted. Try to go to areas where there are a lot of people waiting. You can also carry self-defense devices like pepper spray, alarms, whistles. (ask about why precautions are needed)
+
+    + [*] (why|precautions) [*]
+    - As an Asian woman, there's always a sense of not feeling safe in public. People harrass you and yell racial slurs at you. We're also sterotyped as being timid and docile, making us easier targets. But since the string of anti-Asian hate crimes and attacks in NYC and Chinatown, it's reached a whole new level of anxiety and fear. (ask about anti-Asian attacks / examples of harrassment)
+
+    + [*] (examples|harrassment) [*]
+    - One time, I was walking to a bus stop in Los Angeles when a white man shouted "mock Chinese" and racial slurs at me. "We bombed your ass in Hiroshima!" he yelled. It was frightening, but wasn't an isolated incident. Every day, I would brace myself to get harassed on public transportation as I traveled to and from graduate school. (ask about anti-Asian attacks)
+
+    + [*] attacks [*]
+    - Anti-Asian attacks spiked when the pandemic began, and haven't stopped since. More than 10,000 incidents were reported between March 2020-September 2021. People like Michelle Go and Christina Yuna Lee have been senselessly killed, and it leaves the rest of us in the community feeling really broken and helpless. (ask about Michelle Go / Christina Yuna Lee / more statistics)
+
+    + [*] statistics [*]
+    - The NYPD reported a 361% increase in anti-Asian bias incidents in 2021. San Francisco's police department reported a 567% increase in hate crimes against AAPI people last year. And many attacks on Asians are not even being recognized/charged as hate crimes, thus skewing the numbers. (ask about how hate crimes are charged / how to help)
+
+    + [*] michelle [*]
+    - Michelle Go, a 40-year-old consultant, was waiting for a train at the Times Square station when she was fatally shoved in front of a subway car by a homeless man. The murder is not being charged as a racially-motivated hate crime. Michelle's death deeply affected Asian women, because she reminds them of themselves. (ask about how hate crimes are charged / how to help)
+
+    + [*] christina [*]
+    - Christina Yuna Lee, a 35-year-old creative director, was stabbed more than 40 times by a man who followed her into her apartment in Chinatown. The attacker was charged Monday with murder and burglary. This incident has shaken AAPI communities, especially because it happened less than a month after Michelle Go was killed. (ask about Michelle Go / how to help)
+
+    + [*] (hate crimes|charge|charged) [*]
+    - In New York, to charge attacks as hate crimes, prosecutors need to show that the victims were targeted because of their race, which is difficult with Asians. There's no widely recognized symbol of anti-Asian hate comparable to a noose or swastika. Many Asian victims have been small-business owners who were robbed, complicating the question of motive. (ask about how to help)
+
+    + [*] help [*]
+    - While much of the work to be done is at the government level, there are still ways to help as an individual. Support AAPI advocacy groups, speak out if you witness a hate crime, check in with your peers who are Asian, learn about the history of Asian-American discrimination, reach out to elected officials, and advocate for awareness in your workplace or community.{topic=random}
+
+    + *
+    - Try asking about that topic in a different way!
+<topic
+
++ *
+- Say "Hi Truman" or "Hi Nancy" to start the conversation.

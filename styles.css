@@ -1,0 +1,13 @@
+h1 {
+    font-family: VT323, monospace;
+    font-size: 40px;
+    text-align: center;
+    color: rgb(179, 0, 27);
+    text-transform: uppercase;
+}
+
+main {
+    display: flexbox;
+    justify-content: center;
+}
+
